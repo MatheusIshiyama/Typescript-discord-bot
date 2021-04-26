@@ -1,4 +1,4 @@
-import { Client, Collection } from "discord.js";
+import { Client, Collection, User } from "discord.js";
 import consola, { Consola } from "consola";
 import { promisify } from "util";
 import glob from "glob";
