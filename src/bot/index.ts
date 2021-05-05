@@ -33,4 +33,4 @@ class Bot extends Client {
     }
 }
 
-export { Bot };
+export default Bot;
