@@ -1,9 +1,8 @@
+import Bot from "./bot";
+import app from "./server";
 import consola from "consola";
 import dotenv from "dotenv";
 dotenv.config();
-
-import { Bot } from "./client/Client";
-import app from "./server";
 
 const token: string = String(process.env.DISCORD);
 const port: string = String(process.env.PORT);

@@ -1,5 +1,5 @@
+import Bot from "../bot";
 import { Message } from "discord.js";
-import { Bot } from "../client/Client";
 import { EmbedMessageService } from "../services";
 import { RunFunction, Command } from "./../interfaces";
 import dotenv from "dotenv";

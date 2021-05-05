@@ -1,4 +1,4 @@
-import { Bot } from "../client/Client";
+import Bot from "../bot";
 
 export interface RunFunction {
     (client: Bot, ...args: any[]): Promise<void>;
