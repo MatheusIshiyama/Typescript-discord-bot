@@ -7,7 +7,7 @@ export const InteractionsRoute = express.Router();
 
 import { RawBodyMiddleware } from "../middlewares";
 
-InteractionsRoute.get("/", RawBodyMiddleware, (request: Request, response: Response) => {
+InteractionsRoute.post("/", RawBodyMiddleware, (request: Request, response: Response) => {
     const publicKey: string = String(process.env.PUBLIC_KEY);
     const signature: string = String(request.get("X-Signature-Ed25519"));
     const timestamp: string = String(request.get("X-Signature-Timestamp"));
