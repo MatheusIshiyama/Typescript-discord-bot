@@ -1,7 +1,7 @@
 import Bot from "../bot";
 import { Message } from "discord.js";
 
-export interface RunFunction {
+interface RunFunction {
     (client: Bot, message: Message, args: string[]): Promise<void>;
 }
 
