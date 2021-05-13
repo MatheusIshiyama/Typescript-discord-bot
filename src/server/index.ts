@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 const app = express();
 
 app.get("/", (request: Request, response: Response) => {
+    console.log(request.body);
     const ping = new Date();
     ping.setHours(ping.getHours() - 3);
     response

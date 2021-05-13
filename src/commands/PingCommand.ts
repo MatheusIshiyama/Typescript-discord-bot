@@ -15,3 +15,5 @@ export const run: RunFunction = async (client: Bot, message: Message) => {
 };
 
 export const name: string = "ping";
+
+export const aliases: string[] = [];
