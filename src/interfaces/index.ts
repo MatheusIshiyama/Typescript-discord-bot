@@ -1,2 +1,3 @@
-export { Command } from "./Command";
-export { Event, RunFunction } from "./Event";
+export * from "./Command";
+export * from "./Event";
+export * from './Locale';

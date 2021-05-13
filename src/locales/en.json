@@ -1,0 +1,7 @@
+{
+    "join": {
+        "title": "Command `join`",
+        "no voice channel": "Conect to a voice channel first!",
+        "no permission": "I don't have permissions to connect to this voice channel, check the channel's permissions!"
+    }
+}
