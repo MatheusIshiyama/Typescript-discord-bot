@@ -1,5 +1,5 @@
 import Bot from "../bot";
-import { Message } from "discord.js";
+import { Message, User } from "discord.js";
 import { ILocale, RunFunction } from "../interfaces";
 import { EmbedMessageService } from "../services";
 
@@ -11,13 +11,13 @@ export const run: RunFunction = async (client: Bot, message: Message) => {
 
     embedMessage.setTitle(join["title"]);
     const channel = message.member?.voice?.channel;
-    const permission = channel?.permissionsFor(String(message.client.user));
+    const permission = channel?.permissionsFor(message.client.user as User);
 
     if (!channel) {
         embedMessage.setDescription(join["no voice channel"]);
         return void message.channel.send(embedMessage);
     }
-    
+
     if (!permission?.has("CONNECT")) {
         embedMessage.setDescription(join["no permission"]);
         return void message.channel.send(embedMessage);
@@ -27,3 +27,5 @@ export const run: RunFunction = async (client: Bot, message: Message) => {
 };
 
 export const name: string = "join";
+
+export const aliases: string[] = [];

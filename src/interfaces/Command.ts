@@ -7,6 +7,6 @@ interface RunFunction {
 
 export interface Command {
     name: string;
-    category: string;
+    aliases: string[];
     run: RunFunction;
 }

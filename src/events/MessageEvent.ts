@@ -21,7 +21,9 @@ export const run: RunFunction = async (client: Bot, message: Message) => {
 
     const args: string[] = message.content.slice(prefix.length).trim().split(/ +/g);
     const cmd: string = String(args.shift());
-    const command: Command | undefined = client.commands.get(cmd);
+    const command: Command | undefined =
+        client.commands.get(cmd) ||
+        client.commands.find((command) => command.aliases && command.aliases.includes(cmd));
 
     if (!command) return;
 
