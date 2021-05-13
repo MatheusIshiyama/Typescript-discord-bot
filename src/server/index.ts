@@ -1,15 +1,12 @@
-import express, { Request, Response } from "express";
+import express from "express";
+
 const app = express();
 
-app.get("/", (request: Request, response: Response) => {
-    console.log(request.body);
-    const ping = new Date();
-    ping.setHours(ping.getHours() - 3);
-    response
-        .status(200)
-        .json({
-            message: `Ping recebido às ${ping.getUTCHours()}:${ping.getUTCMinutes()}:${ping.getUTCSeconds()}`,
-        });
-});
+app.use(express.raw());
+
+import { UptimeRoute, InteractionsRoute } from "./routes";
+
+app.use("/uptime", UptimeRoute);
+app.use('/interactions', InteractionsRoute);
 
 export default app;

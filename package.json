@@ -17,7 +17,8 @@
         "express": "^4.17.1",
         "glob": "^7.1.6",
         "mongoose": "^5.12.8",
-        "reflect-metadata": "^0.1.13"
+        "reflect-metadata": "^0.1.13",
+        "tweetnacl": "^1.0.3"
     },
     "devDependencies": {
         "@types/express": "^4.17.11",
