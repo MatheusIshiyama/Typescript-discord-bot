@@ -2,9 +2,7 @@ import bot from "../../bot";
 import { User } from "discord.js";
 import { Response } from "express";
 import { ILocale, SlashRunFunction } from "../../interfaces";
-import { EmbedMessageService } from "../../services";
 
-const { embedMessage } = new EmbedMessageService();
 const language = "ptbr";
 
 export const run: SlashRunFunction = async (
@@ -14,7 +12,6 @@ export const run: SlashRunFunction = async (
 ) => {
     const { join }: ILocale = require(`../../locales/${language}.json`);
 
-    embedMessage.setTitle(join["title"]);
     const guild = await bot.guilds.fetch(guildId);
     const user = await guild.members.fetch(userId);
 
@@ -23,29 +20,31 @@ export const run: SlashRunFunction = async (
     const hasPermission = permission?.has("CONNECT");
 
     if (!channel) {
-        embedMessage.setDescription(join["no voice channel"]);
         return response.status(200).json({
             type: 4,
             data: {
-                embeds: [embedMessage],
+                content: join["no voice channel"],
             },
         });
     }
 
     if (!hasPermission) {
-        embedMessage.setDescription(join["no permission"]);
         return response.status(200).json({
             type: 4,
             data: {
-                embeds: [embedMessage],
+                content: join["no permission"]
             },
         });
     }
 
-    user.voice.channel?.join();
+    channel.join();
 
-    embedMessage.setDescription(`${join['joined']}: \`${channel.name}\``);
-    return response.status(200);
+    return response.status(200).json({
+        type: 4,
+        data: {
+            content: `${join['joined']}: \`${channel.name}\``
+        }
+    });
 };
 
 export const name: string = "join";
