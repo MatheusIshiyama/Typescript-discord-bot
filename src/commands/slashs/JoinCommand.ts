@@ -32,7 +32,7 @@ export const run: SlashRunFunction = async (
         return response.status(200).json({
             type: 4,
             data: {
-                content: join["no permission"]
+                content: join["no permission"],
             },
         });
     }
@@ -42,8 +42,8 @@ export const run: SlashRunFunction = async (
     return response.status(200).json({
         type: 4,
         data: {
-            content: `${join['joined']}: \`${channel.name}\``
-        }
+            content: `${join["joined"]}: \`${channel.name}\``,
+        },
     });
 };
 
