@@ -1,4 +1,4 @@
-import Bot from "../bot";
+import { Bot } from "../bot";
 
 let presence: boolean = false;
 class PresenceService {
