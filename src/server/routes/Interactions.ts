@@ -1,3 +1,4 @@
+import bot from '../../bot';
 import express, { Request, Response } from "express";
 import nacl from "tweetnacl";
 import dotenv from "dotenv";
@@ -21,5 +22,12 @@ InteractionsRoute.post("/", RawBodyMiddleware, (request: Request, response: Resp
 
     if (!isVerified) return response.status(401).json({ message: "Invalid request signature" });
 
-    response.status(200).json({ type: 1 });
+    const body = JSON.parse(rawBody);
+
+    const command = body.data?.name;
+    const guildId = body.guild_id;
+    const userId = body.member?.user?.id;
+
+    const commandFile = bot.slashCommands.get(command);
+    commandFile?.run(guildId, userId, response);
 });

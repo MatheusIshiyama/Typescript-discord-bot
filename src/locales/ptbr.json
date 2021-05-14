@@ -2,6 +2,7 @@
     "join": {
         "title": "Comando `join`",
         "no voice channel": "Conecte-se à um canal de voz primeiro!",
-        "no permission": "Não tenho permissão para me conectar ao canal de voz, verifique as permissões do canal!"
+        "no permission": "Não tenho permissão para me conectar ao canal de voz, verifique as permissões do canal!",
+        "joined": "Entrei no canal de voz"
     }
 }
