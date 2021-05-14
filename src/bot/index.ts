@@ -7,7 +7,7 @@ import { Command, Event } from "../interfaces";
 
 const globPromise = promisify(glob);
 
-class Bot extends Client {
+export class Bot extends Client {
     public logger: Consola = consola;
     public commands: Collection<string, Command> = new Collection();
     public events: Collection<string, Event> = new Collection();
@@ -33,4 +33,4 @@ class Bot extends Client {
     }
 }
 
-export default Bot;
+export default new Bot();

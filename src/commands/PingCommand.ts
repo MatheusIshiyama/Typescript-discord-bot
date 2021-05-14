@@ -1,4 +1,4 @@
-import Bot from "../bot";
+import { Bot } from "../bot";
 import { Message } from "discord.js";
 import { EmbedMessageService } from "../services";
 import { RunFunction } from "./../interfaces";
