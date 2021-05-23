@@ -19,7 +19,7 @@ export class Bot extends Client {
 
         //* get all commands
         const commandFiles: string[] = await globPromise(`${__dirname}/../commands/*{.ts,.js}`);
-        commandFiles.map(async (value: string) => {
+        commandFiles.forEach(async (value: string) => {
             const file = await import(value);
             this.commands.set(file.name, file);
         });
@@ -28,14 +28,14 @@ export class Bot extends Client {
         const slashCommandFiles: string[] = await globPromise(
             `${__dirname}/../commands/slashs/*{.js,.ts}`
         );
-        slashCommandFiles.map(async (value: string) => {
+        slashCommandFiles.forEach(async (value: string) => {
             const file = await import(value);
             this.slashCommands.set(file.name, file);
         });
 
         //* get all events
         const eventFiles: string[] = await globPromise(`${__dirname}/../events/*{.ts,.js}`);
-        eventFiles.map(async (value: string) => {
+        eventFiles.forEach(async (value: string) => {
             const file = await import(value);
             this.commands.set(file.name, file);
             this.on(file.name, file.run.bind(null, this));

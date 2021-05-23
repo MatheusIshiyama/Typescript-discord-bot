@@ -15,15 +15,13 @@ export const run: RunFunction = async (client: Bot, message: Message) => {
 
     if (!channel) {
         embedMessage.setDescription(join["no voice channel"]);
-        return void message.channel.send(embedMessage);
-    }
-
-    if (!permission?.has("CONNECT")) {
+        message.channel.send(embedMessage);
+    } else if (!permission?.has("CONNECT")) {
         embedMessage.setDescription(join["no permission"]);
-        return void message.channel.send(embedMessage);
+        message.channel.send(embedMessage);
+    } else {
+        message.member?.voice.channel?.join();
     }
-
-    message.member?.voice.channel?.join();
 };
 
 export const name: string = "join";
