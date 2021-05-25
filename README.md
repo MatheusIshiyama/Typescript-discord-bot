@@ -1,1 +1,1 @@
-# discord-bot-typescript
+# BravanzinBot
