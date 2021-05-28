@@ -13,4 +13,4 @@ before_install:
     - unzip sonar-scanner-cli-3.3.0.1492-linux.zip -d /tmp
 
 script:
-    - /tmp/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner
+    - /tmp/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -X
