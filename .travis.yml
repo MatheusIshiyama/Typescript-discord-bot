@@ -10,4 +10,4 @@ before_install:
 - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
 - unzip sonar-scanner-cli-4.6.2.2472-linux.zip -d /tmp
 script:
-- "/tmp/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner -X"
+- "/tmp/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner"
