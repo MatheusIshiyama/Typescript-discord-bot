@@ -1,16 +1,13 @@
 language: node_js
 node_js:
-    - lts/*
-    - node
-
+- lts/*
 addons:
-    organization: "matheusishiyama"
+  sonarcloud:
+    organization: matheusishiyama
     token:
-        secure: PCWEtu/2HZs+8akNiXZBrXztkKCWrAUKsnI6AIfo2NQb/QONSzMjshuqpZ3mk7UAfLBzZ1lC26HB6w8WnnWJm34Y9qDkruXMBZRzcgyc0SNLUwLO+qItXRdgvzfVDQ9mTZjvhoskI8YYs1vP4NNhIArRbpTR0jAddDd6/vugMLp9pLcKBUt+Oq/ZZjAiEMfbBk52YcWcpdBpAIT6L31Iq/YROGNas2h7srRZdBI7KpIUogBYq94SqfT6L3KuTfKW6x1Qd3uQv/oyCcu4XDklwHgqw+k/nJ88DqN63n12Sxebq7CpIea6L0vyinLB50V0LuPP6aMi0+DAys1Gl4o4AkpREBW09b9AXwfXgoe+AcpTjGjF9OYiQJW9/wy8iktVcPcvvz48qVP6KWNLCEANHwxDOCN2YjJ1vlJ0ET447309nOrIeX+/mtdo66Y6glMuT5bDmMGGoaZB5W7eMRJ2psVir8CVz+tCwN+fiukPpxrxFS+Mafy7alLHwPfKADYjUmZhZAmwcFy4tqcqS/sPQO/FeQ6/BmosroD/inoNO0tSSwvgihE1upj9ZSucBGKb7rHbCGXU96wJDOnttY9IFTCFO/Z0+OmWqcZqSE2FeSYR2AxDpHeYJK2Zc1Q3t21Qe2KGbbDVF6Ymc76dJelyvW8YDTaFh/u7xk1ihdAQ9h0=
-
+      secure: D2+OIbmrCVk/cdr0qtRTiXBtyCqR1tcdSlSz29J0ZEfLB/cvGLQ08M6+uF3Pgiu7FeecsICPOPNT7qqSPHWQwPoZtiHiRmBMP7vZNxv6u92n6XRuRceUl0T9IvD2V4lk+XOgVha4JyLL9j6wilfMsq4XLEDdPtg+Ere6UNWIDFssXOIBG9WgaApvJfQfk4v8pNmmyfnBxU4q0ByEeAvOjOhrnyTyrI3G21wCvxBcE1nOCK2VEFvQIuO1mWWrdQJbz4PMWEmR/yHztqr/8y8/Ecod8n37QFUp9bmpwS7OZJP6fAfBtrXijHNW5I5bShrOFxDwzATi6PQ5M+KGJCv6oPIClwOAvaI7b2LHh8Bxn3bkckgmdms1YtpvXq2TE8ucqDTpd2SRjd1s1i5Ye1Je+PL0ssGfsMYa66fjTJ5EU8FhyEijwTdDU2bXizt59ZJPjGF+qGume7sauIBOnoE1BdYsu3avaktOStvKcGH79+va/4iXkg+pSX98p/y4wW5sEGGzqmbr6DgCwXu/VGnwYzBM+RHlscH7nSPEmABPj3E0Du4VpaUWgwEb3h6PFqUk18xZdEKpBezXEsDuGF0Gb82G5WVU44gA8gPRf3NGrFRQ7XB/XDh3lX9CgYVjUG9Y0bn5jIBWGllglF+KGQTejIgBBqPR68x9xLcM2IQ6F8Q=
 before_install:
-    - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
-    - unzip sonar-scanner-cli-4.6.2.2472-linux.zip -d /tmp
-
+- wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+- unzip sonar-scanner-cli-4.6.2.2472-linux.zip -d /tmp
 script:
-    - /tmp/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner -X
+- "/tmp/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner -X"
