@@ -9,7 +9,7 @@ addons:
         secure: PCWEtu/2HZs+8akNiXZBrXztkKCWrAUKsnI6AIfo2NQb/QONSzMjshuqpZ3mk7UAfLBzZ1lC26HB6w8WnnWJm34Y9qDkruXMBZRzcgyc0SNLUwLO+qItXRdgvzfVDQ9mTZjvhoskI8YYs1vP4NNhIArRbpTR0jAddDd6/vugMLp9pLcKBUt+Oq/ZZjAiEMfbBk52YcWcpdBpAIT6L31Iq/YROGNas2h7srRZdBI7KpIUogBYq94SqfT6L3KuTfKW6x1Qd3uQv/oyCcu4XDklwHgqw+k/nJ88DqN63n12Sxebq7CpIea6L0vyinLB50V0LuPP6aMi0+DAys1Gl4o4AkpREBW09b9AXwfXgoe+AcpTjGjF9OYiQJW9/wy8iktVcPcvvz48qVP6KWNLCEANHwxDOCN2YjJ1vlJ0ET447309nOrIeX+/mtdo66Y6glMuT5bDmMGGoaZB5W7eMRJ2psVir8CVz+tCwN+fiukPpxrxFS+Mafy7alLHwPfKADYjUmZhZAmwcFy4tqcqS/sPQO/FeQ6/BmosroD/inoNO0tSSwvgihE1upj9ZSucBGKb7rHbCGXU96wJDOnttY9IFTCFO/Z0+OmWqcZqSE2FeSYR2AxDpHeYJK2Zc1Q3t21Qe2KGbbDVF6Ymc76dJelyvW8YDTaFh/u7xk1ihdAQ9h0=
 
 before_install:
-    - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip 10
+    - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip
     - unzip sonar-scanner-cli-3.3.0.1492-linux.zip
     - export PATH=$(pwd)/sonar-scanner-cli-3.3.0.1492-linux/bin:$PATH
 
