@@ -1,1 +1,3 @@
 # BravanzinBot
+
+Discord music bot
