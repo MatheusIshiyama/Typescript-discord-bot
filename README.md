@@ -1,3 +1,3 @@
-# BravanzinBot
+# Typescrip discord bot
 
-Discord music bot
+Discord bot
